@@ -28,9 +28,9 @@ namespace WcfService.Service
         [FaultContract(typeof(ExceptionMessage))]
         int DeleteClient(int clientId);
 
-        //[OperationContract]
-        //[FaultContract(typeof(ExceptionMessage))]
-        //void UpdateClient(ClientDetails clientDetails, AddressDetails addressDetails);
+        [OperationContract]
+        [FaultContract(typeof(ExceptionMessage))]
+        void UpdateClient(int clientId, ClientDetails clientDetails, AddressDetails addressDetails, ContactDetails contactDetails);
 
     }
 

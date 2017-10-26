@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WFRestClient
+namespace WFRestClient.Client_Management
 {
-    public partial class Form1 : Form
+    public partial class AddClient : Form
     {
-        public Form1()
+        public AddClient()
         {
             InitializeComponent();
         }

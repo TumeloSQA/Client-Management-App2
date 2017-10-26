@@ -18,6 +18,7 @@ namespace WcfService.Service
     public class ClientService : IClientService
     {
         private DbConnection dbConn = new DbConnection();
+
         public string InsertClientDetails(ClientDetails clientDetails, AddressDetails addressDetails, ContactDetails contactDetails)
         {
             string message;
@@ -73,39 +74,89 @@ namespace WcfService.Service
             return message;
         }
 
+        public DataSet GetClient(int clientId)
+        {
+            dbConn.openConnection();
+            string sqlQuery = "SELECT ClientDetails.clientId, ClientDetails.name, ClientDetails.gender, " +
+                "ClientAddress.resAddress,  ClientAddress.posAddress,  ClientAddress.workAddress, " +
+                "ClientContact.cellNumber, ClientContact.workTel " +
+                "FROM ClientDetails " +
+                "INNER JOIN ClientAddress ON ClientDetails.clientId = ClientAddress.clientId " +
+                "INNER JOIN ClientContact ON ClientDetails.clientId = ClientContact.clientId " +
+                "WHERE ClientDetails.clientId = " + clientId;
+            string clientQuery = "SELECT ClientDetails.clientId, ClientDetails.name,ClientDetails.gender," +
+                "ClientContact.cellNumber, ClientContact.workTel, " +
+                "ClientAddress.resAddress, ClientAddress.workAddress, ClientAddress.posAddress " +
+                "FROM ClientDetails, ClientAddress, ClientContact " +
+                "WHERE  ClientDetails.clientId = ClientAddress.clientId " +
+                "AND ClientDetails.clientId = ClientAddress.clientId " +
+                "AND ClientDetails.clientId = " + clientId;
+
+            SqlCommand cmdClients = new SqlCommand(sqlQuery, dbConn.connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdClients);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            cmdClients.ExecuteNonQuery();
+
+            return dataSet;
+        }
+
         public DataSet GetClientDetails()
         {
-            SqlConnection sqlConnection = new SqlConnection(@"Data Source=LUTHULCOMP2\SQLEXPRESS;Initial Catalog=ClientManagerDb;Integrated Security=True");
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT ClientDetails.clientId, ClientDetails.name,ClientDetails.gender,ClientDetails.cellNumber, ClientDetails.workTel, ClientAddress.resAddress, ClientAddress.workAddress, ClientAddress.posAddress FROM ClientDetails, ClientAddress WHERE  ClientDetails.clientId = ClientAddress.clientId", sqlConnection);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            cmd.ExecuteNonQuery();
-            sqlConnection.Close();
-            return ds;
+            dbConn.openConnection();
+            string sqlQuery = "SELECT ClientDetails.clientId, ClientDetails.name, ClientDetails.gender, "
+                       + "ClientAddress.resAddress,  ClientAddress.posAddress,  ClientAddress.workAddress, "
+                       + "ClientContact.cellNumber, ClientContact.workTel "
+                       + "FROM ClientDetails "
+                       + "INNER JOIN ClientAddress ON ClientDetails.clientId = ClientAddress.clientId "
+                       + "INNER JOIN ClientContact ON ClientDetails.clientId = ClientContact.clientId";
+            SqlCommand cmdClients = new SqlCommand(sqlQuery, dbConn.connection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdClients);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            cmdClients.ExecuteNonQuery();
+            
+            return dataSet;
         }
 
         public int DeleteClient(int clientId)
         {
-            try
-            {
-                using (SqlConnection sqlConnection = new SqlConnection(@"Data Source=LUTHULCOMP2\SQLEXPRESS;Initial Catalog=ClientManagerDb;Integrated Security=True"))
-                {
+            dbConn.openConnection();
+            string sqlQuery = "delete from ClientDetails where clientId = " + clientId;
+            SqlCommand cmdDelete = new SqlCommand(sqlQuery, dbConn.connection);
 
-                    string strCommand = "DELETE FROM ClientDetails WHERE clientId = " + clientId;
-                    sqlConnection.Open();
-                    SqlCommand cmdDelete = new SqlCommand();
-                    cmdDelete.Connection = sqlConnection;
-                    cmdDelete.CommandType = CommandType.Text;
-                    cmdDelete.CommandText = strCommand;
-                    return cmdDelete.ExecuteNonQuery();
-                }
-            }
-            catch (SqlException exception)
-            {
-                throw (exception);
-            }
+            return cmdDelete.ExecuteNonQuery();
+        }
+
+        public int UpdateClient(int clientId, ClientDetails clientDetails, AddressDetails addressDetails, ContactDetails contactDetails)
+        {
+            dbConn.openConnection();
+            string sqlClientUpdate = "UPDATE ClientDetails "
+                                    + "SET name = '" + clientDetails.Name + "'"
+                                    + ", gender = '" + clientDetails.Gender + "'"
+                                    + " WHERE clientId = " + clientId;
+            SqlCommand cmdUpdateClient = new SqlCommand(sqlClientUpdate, dbConn.connection);
+            cmdUpdateClient.ExecuteNonQuery();
+
+            string sqlAddressUpdate = "UPDATE ClientAddress "
+                                   + "SET resAddress = '" + addressDetails.ResAddress + "'"
+                                   + ", posAddress = '" + addressDetails.PosAddress + "'"
+                                   + ", workAddress = '" + addressDetails.WorkAddress + "'"
+                                   + "WHERE clientId = " + clientId;
+            SqlCommand cmdUpdateAddress = new SqlCommand(sqlAddressUpdate, dbConn.connection);
+            cmdUpdateAddress.ExecuteNonQuery();
+
+
+            string sqlContactUpdate = "UPDATE ClientContact "
+                                   + "SET cellNumber = '" + contactDetails.CellNumber + "'"
+                                   + ", workTel = '" + contactDetails.WorkTel + "'"
+                                   + "WHERE clientId = " + clientId;
+
+            SqlCommand cmdUpdateContact = new SqlCommand(sqlContactUpdate, dbConn.connection);
+            int res = cmdUpdateContact.ExecuteNonQuery();
+
+
+            return res;
         }
 
 

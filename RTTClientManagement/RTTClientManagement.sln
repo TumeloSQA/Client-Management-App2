@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFRestClient", "WFRestClient\WFRestClient.csproj", "{12D08E6C-AF35-4275-B574-F6E91B2A00BC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3C7C598F-88F0-47B5-8ED3-07E028E44457} = {3C7C598F-88F0-47B5-8ED3-07E028E44457}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{3C7C598F-88F0-47B5-8ED3-07E028E44457}"
 EndProject

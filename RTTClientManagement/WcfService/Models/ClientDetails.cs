@@ -12,6 +12,7 @@ namespace WcfService.Models
         int clientId;
         string name = string.Empty;
         string gender = string.Empty;
+        string status = string.Empty;
 
         [DataMember]
         public int ClientId
@@ -32,6 +33,13 @@ namespace WcfService.Models
         {
             get { return gender; }
             set { gender = value; }
+        }
+
+        [DataMember]
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
         }
 
     }

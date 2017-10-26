@@ -29,26 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBackHome = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.tabClientDetails = new System.Windows.Forms.TabControl();
             this.clientDetails = new System.Windows.Forms.TabPage();
-            this.clientContact = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lblName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblCell = new System.Windows.Forms.Label();
-            this.txtCell = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.clientContact = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.txtWorkTel = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtResAddress = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtWorkAddress = new System.Windows.Forms.TextBox();
+            this.lblCell = new System.Windows.Forms.Label();
+            this.txtCell = new System.Windows.Forms.TextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPosAddress = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnBackHome = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtWorkAddress = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtResAddress = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabClientDetails.SuspendLayout();
             this.clientDetails.SuspendLayout();
@@ -65,6 +66,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(771, 367);
             this.panel1.TabIndex = 0;
+            // 
+            // btnBackHome
+            // 
+            this.btnBackHome.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnBackHome.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnBackHome.Location = new System.Drawing.Point(607, 307);
+            this.btnBackHome.Name = "btnBackHome";
+            this.btnBackHome.Size = new System.Drawing.Size(144, 41);
+            this.btnBackHome.TabIndex = 2;
+            this.btnBackHome.Text = "Back";
+            this.btnBackHome.UseVisualStyleBackColor = false;
+            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnAdd.Location = new System.Drawing.Point(7, 307);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(144, 41);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Submit";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tabClientDetails
             // 
@@ -93,6 +118,42 @@
             this.clientDetails.Text = "Client Details";
             this.clientDetails.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Male",
+            "Gender"});
+            this.comboBox1.Location = new System.Drawing.Point(129, 89);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(197, 24);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Gender:";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(17, 32);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(54, 17);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Name:";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(129, 32);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(197, 22);
+            this.txtName.TabIndex = 0;
+            // 
             // clientContact
             // 
             this.clientContact.Controls.Add(this.label2);
@@ -107,75 +168,6 @@
             this.clientContact.TabIndex = 1;
             this.clientContact.Text = "Client Contact";
             this.clientContact.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.txtPosAddress);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.txtWorkAddress);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.txtResAddress);
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(740, 234);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Client Address";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(129, 32);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(197, 22);
-            this.txtName.TabIndex = 0;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(17, 32);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(54, 17);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "Name:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Gender:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Male",
-            "Gender"});
-            this.comboBox1.Location = new System.Drawing.Point(129, 89);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 24);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // lblCell
-            // 
-            this.lblCell.AutoSize = true;
-            this.lblCell.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblCell.Location = new System.Drawing.Point(19, 29);
-            this.lblCell.Name = "lblCell";
-            this.lblCell.Size = new System.Drawing.Size(101, 17);
-            this.lblCell.TabIndex = 3;
-            this.lblCell.Text = "Cell Number:";
-            // 
-            // txtCell
-            // 
-            this.txtCell.Location = new System.Drawing.Point(131, 29);
-            this.txtCell.Name = "txtCell";
-            this.txtCell.Size = new System.Drawing.Size(197, 22);
-            this.txtCell.TabIndex = 2;
             // 
             // label2
             // 
@@ -194,39 +186,38 @@
             this.txtWorkTel.Size = new System.Drawing.Size(197, 22);
             this.txtWorkTel.TabIndex = 4;
             // 
-            // label3
+            // lblCell
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(18, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Res Address:";
+            this.lblCell.AutoSize = true;
+            this.lblCell.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblCell.Location = new System.Drawing.Point(19, 29);
+            this.lblCell.Name = "lblCell";
+            this.lblCell.Size = new System.Drawing.Size(101, 17);
+            this.lblCell.TabIndex = 3;
+            this.lblCell.Text = "Cell Number:";
             // 
-            // txtResAddress
+            // txtCell
             // 
-            this.txtResAddress.Location = new System.Drawing.Point(152, 41);
-            this.txtResAddress.Name = "txtResAddress";
-            this.txtResAddress.Size = new System.Drawing.Size(197, 22);
-            this.txtResAddress.TabIndex = 4;
+            this.txtCell.Location = new System.Drawing.Point(131, 29);
+            this.txtCell.Name = "txtCell";
+            this.txtCell.Size = new System.Drawing.Size(197, 22);
+            this.txtCell.TabIndex = 2;
             // 
-            // label4
+            // tabPage1
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(18, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Work Address:";
-            // 
-            // txtWorkAddress
-            // 
-            this.txtWorkAddress.Location = new System.Drawing.Point(152, 100);
-            this.txtWorkAddress.Name = "txtWorkAddress";
-            this.txtWorkAddress.Size = new System.Drawing.Size(197, 22);
-            this.txtWorkAddress.TabIndex = 6;
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.txtPosAddress);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.txtWorkAddress);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.txtResAddress);
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(740, 234);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Client Address";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -245,33 +236,59 @@
             this.txtPosAddress.Size = new System.Drawing.Size(197, 22);
             this.txtPosAddress.TabIndex = 8;
             // 
-            // btnAdd
+            // label4
             // 
-            this.btnAdd.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnAdd.Location = new System.Drawing.Point(7, 307);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(144, 41);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Submit";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Location = new System.Drawing.Point(18, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Work Address:";
             // 
-            // btnBackHome
+            // txtWorkAddress
             // 
-            this.btnBackHome.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnBackHome.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnBackHome.Location = new System.Drawing.Point(607, 307);
-            this.btnBackHome.Name = "btnBackHome";
-            this.btnBackHome.Size = new System.Drawing.Size(144, 41);
-            this.btnBackHome.TabIndex = 2;
-            this.btnBackHome.Text = "Back";
-            this.btnBackHome.UseVisualStyleBackColor = false;
+            this.txtWorkAddress.Location = new System.Drawing.Point(152, 100);
+            this.txtWorkAddress.Name = "txtWorkAddress";
+            this.txtWorkAddress.Size = new System.Drawing.Size(197, 22);
+            this.txtWorkAddress.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Location = new System.Drawing.Point(18, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Res Address:";
+            // 
+            // txtResAddress
+            // 
+            this.txtResAddress.Location = new System.Drawing.Point(152, 41);
+            this.txtResAddress.Name = "txtResAddress";
+            this.txtResAddress.Size = new System.Drawing.Size(197, 22);
+            this.txtResAddress.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label6.Location = new System.Drawing.Point(311, 9);
+            this.label6.MaximumSize = new System.Drawing.Size(150, 80);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 22);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Add New Client";
             // 
             // AddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 461);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Name = "AddClient";
             this.Text = "AddClient";
@@ -284,6 +301,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -310,5 +328,6 @@
         private System.Windows.Forms.TextBox txtPosAddress;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBackHome;
+        private System.Windows.Forms.Label label6;
     }
 }

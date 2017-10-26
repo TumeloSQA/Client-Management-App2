@@ -25,8 +25,8 @@ namespace WcfService.Service
 
             dbConn.openConnection();
 
-            SqlCommand cmdClient = new SqlCommand("insert into ClientDetails(name,gender) OUTPUT INSERTED.clientId values(@name,@gender)", dbConn.connection);
-            //cmdClient.Parameters.AddWithValue("@clientId", clientDetails.ClientId);
+            SqlCommand cmdClient = new SqlCommand("insert into ClientDetails(name,gender, status) OUTPUT INSERTED.clientId values(@name,@gender, 'Active')", dbConn.connection);
+            
             cmdClient.Parameters.AddWithValue("@name", clientDetails.Name);
             cmdClient.Parameters.AddWithValue("@gender", clientDetails.Gender);
 
@@ -104,7 +104,7 @@ namespace WcfService.Service
         public DataSet GetClientDetails()
         {
             dbConn.openConnection();
-            string sqlQuery = "SELECT ClientDetails.clientId, ClientDetails.name, ClientDetails.gender, "
+            string sqlQuery = "SELECT ClientDetails.clientId, ClientDetails.name, ClientDetails.gender, ClientDetails.status , "
                        + "ClientAddress.resAddress,  ClientAddress.posAddress,  ClientAddress.workAddress, "
                        + "ClientContact.cellNumber, ClientContact.workTel "
                        + "FROM ClientDetails "
@@ -122,10 +122,11 @@ namespace WcfService.Service
         public int DeleteClient(int clientId)
         {
             dbConn.openConnection();
-            string sqlQuery = "delete from ClientDetails where clientId = " + clientId;
-            SqlCommand cmdDelete = new SqlCommand(sqlQuery, dbConn.connection);
-
-            return cmdDelete.ExecuteNonQuery();
+            string sqlClientDelete = "UPDATE ClientDetails "
+                                    + "SET status = '" + "NOT ACTIVE" + "'"
+                                    + " WHERE clientId = " + clientId;
+            SqlCommand cmdUpdateClient = new SqlCommand(sqlClientDelete, dbConn.connection);
+            return cmdUpdateClient.ExecuteNonQuery();
         }
 
         public int UpdateClient(int clientId, ClientDetails clientDetails, AddressDetails addressDetails, ContactDetails contactDetails)
@@ -133,7 +134,6 @@ namespace WcfService.Service
             dbConn.openConnection();
             string sqlClientUpdate = "UPDATE ClientDetails "
                                     + "SET name = '" + clientDetails.Name + "'"
-                                    + ", gender = '" + clientDetails.Gender + "'"
                                     + " WHERE clientId = " + clientId;
             SqlCommand cmdUpdateClient = new SqlCommand(sqlClientUpdate, dbConn.connection);
             cmdUpdateClient.ExecuteNonQuery();

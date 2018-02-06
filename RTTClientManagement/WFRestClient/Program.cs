@@ -16,7 +16,7 @@ namespace WFRestClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Client_Management.HomeForm());
+            Application.Run(new Client_Management.Index());
         }
     }
 }

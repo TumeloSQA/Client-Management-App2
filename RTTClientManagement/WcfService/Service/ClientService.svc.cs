@@ -25,7 +25,9 @@ namespace WcfService.Service
 
             dbConn.openConnection();
 
-            SqlCommand cmdClient = new SqlCommand("insert into ClientDetails(name,gender, status) OUTPUT INSERTED.clientId values(@name,@gender, 'Active')", dbConn.connection);
+            SqlCommand cmdClient = new SqlCommand("insert into ClientDetails(name,gender, status) " +
+                "OUTPUT INSERTED.clientId " +
+                "values(@name,@gender, 'Active')", dbConn.connection);
             
             cmdClient.Parameters.AddWithValue("@name", clientDetails.Name);
             cmdClient.Parameters.AddWithValue("@gender", clientDetails.Gender);

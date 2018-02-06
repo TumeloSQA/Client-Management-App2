@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="96f7c4ae-dc85-4929-9e31-cda8f72a6d26" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56365/Service/IClientSPService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IClientSPService2.xsd" MetadataType="Schema" ID="79718388-a12a-4282-902a-396ea090dc42" SourceId="1" SourceUrl="http://localhost:56365/Service/IClientSPService.svc?xsd=xsd0" />
+    <MetadataFile FileName="IClientSPService3.xsd" MetadataType="Schema" ID="f5cd731a-d4d7-4ca0-b324-088b84c163c5" SourceId="1" SourceUrl="http://localhost:56365/Service/IClientSPService.svc?xsd=xsd4" />
+    <MetadataFile FileName="IClientSPService.disco" MetadataType="Disco" ID="976748bd-0c91-4973-8ea1-5e39400fe13e" SourceId="1" SourceUrl="http://localhost:56365/Service/IClientSPService.svc?disco" />
+    <MetadataFile FileName="IClientSPService.wsdl" MetadataType="Wsdl" ID="fe8cee44-2910-45fa-a69e-e7bfae87b146" SourceId="1" SourceUrl="http://localhost:56365/Service/IClientSPService.svc?wsdl" />
+    <MetadataFile FileName="IClientSPService31.xsd" MetadataType="Schema" ID="0810e70c-c0de-41d6-87ba-0552b0850035" SourceId="1" SourceUrl="http://localhost:56365/Service/IClientSPService.svc?xsd=xsd3" />
+    <MetadataFile FileName="IClientSPService1.xsd" MetadataType="Schema" ID="68ad326f-2be8-4ced-ba6f-4a563c44dd65" SourceId="1" SourceUrl="http://localhost:56365/Service/IClientSPService.svc?xsd=xsd1" />
+    <MetadataFile FileName="IClientSPService.xsd" MetadataType="Schema" ID="2b75f0a9-1b5b-490f-aada-95bd64c97db2" SourceId="1" SourceUrl="http://localhost:56365/Service/IClientSPService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

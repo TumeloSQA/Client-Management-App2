@@ -177,11 +177,11 @@
             this.clientContact.Controls.Add(this.lblCell);
             this.clientContact.Controls.Add(this.txtCell);
             this.clientContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientContact.Location = new System.Drawing.Point(4, 22);
+            this.clientContact.Location = new System.Drawing.Point(4, 24);
             this.clientContact.Margin = new System.Windows.Forms.Padding(2);
             this.clientContact.Name = "clientContact";
             this.clientContact.Padding = new System.Windows.Forms.Padding(2);
-            this.clientContact.Size = new System.Drawing.Size(553, 188);
+            this.clientContact.Size = new System.Drawing.Size(553, 186);
             this.clientContact.TabIndex = 1;
             this.clientContact.Text = "Client Contact";
             this.clientContact.UseVisualStyleBackColor = true;
@@ -238,10 +238,10 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.txtResAddress);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(553, 188);
+            this.tabPage1.Size = new System.Drawing.Size(553, 186);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Client Address";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -334,7 +334,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddClient";
-            this.Text = "AddClient";
+            this.Text = "Add Client";
             this.panel1.ResumeLayout(false);
             this.tabClientDetails.ResumeLayout(false);
             this.clientDetails.ResumeLayout(false);

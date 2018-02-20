@@ -23,5 +23,9 @@ namespace WcfService.Service
         [OperationContract]
         [FaultContract(typeof(ExceptionMessage))]
         DataSet GetClients();
+
+        [OperationContract]
+        [FaultContract(typeof(ExceptionMessage))]
+        int UpdateClient(ClientDetails clientDetails, AddressDetails addressDetails, ContactDetails contactDetails);
     }
 }

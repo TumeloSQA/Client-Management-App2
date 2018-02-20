@@ -46,6 +46,38 @@ namespace WcfService.Service
             return message;
         }
 
+        public int UpdateClient(ClientDetails clientDetails, AddressDetails addressDetails, ContactDetails contactDetails)
+        {
+            string message;
+
+            dbConn.openConnection();
+
+            SqlCommand cmd = new SqlCommand("nsp_updateClient @clientId,@name,@gender" +
+                ",@cellNumber,@workTel,@resAddress,@workAddress,@posAddress", dbConn.connection);
+            
+
+            cmd.Parameters.Add("@clientId", SqlDbType.Int, 100).Value = clientDetails.ClientId;
+            //Insert Client Details
+            cmd.Parameters.Add("@name", SqlDbType.VarChar, 100).Value = clientDetails.Name;
+            cmd.Parameters.Add("@gender", SqlDbType.VarChar, 100).Value = clientDetails.Gender;
+
+            //Insert Client Contact
+            cmd.Parameters.Add("@cellNumber", SqlDbType.VarChar, 100).Value = contactDetails.CellNumber;
+            cmd.Parameters.Add("@workTel", SqlDbType.VarChar, 100).Value = contactDetails.WorkTel;
+
+            //Insert Client Address
+            cmd.Parameters.Add("@resAddress", SqlDbType.VarChar, 100).Value = addressDetails.ResAddress;
+            cmd.Parameters.Add("@workAddress", SqlDbType.VarChar, 100).Value = addressDetails.WorkAddress;
+            cmd.Parameters.Add("@posAddress", SqlDbType.VarChar, 100).Value = addressDetails.PosAddress;
+
+            int res = cmd.ExecuteNonQuery();
+
+            message = clientDetails.Name + " Updated Succesfully";
+
+            return res;
+        }
+
+
         public DataSet GetClientByName(string clientName)
         {
 
@@ -86,5 +118,7 @@ namespace WcfService.Service
 
 
         }
+
+        
     }
 }

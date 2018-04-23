@@ -12,7 +12,7 @@ namespace WcfService.DAL
 
         public void CreateConnection()
         {
-            myCon = new SqlConnection("Data Source=RTTJHB_PMO02;Initial Catalog=ClientManagerDb;Integrated Security=True");
+            myCon = new SqlConnection("Data Source=.;Initial Catalog=ClientManagerDb;Integrated Security=True");
             myCon.Open();
 
         }
